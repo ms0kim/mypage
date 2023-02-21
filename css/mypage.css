@@ -1,0 +1,581 @@
+@import url(common.css);
+@import url(font.css);
+
+*{
+  font-family: 'ClarityCity','NanumNeo';
+  text-transform: capitalize;
+}
+body{
+  position: relative;
+  font-size: 16px;
+  color: #867066;
+  transition: 0.5s;
+  background: #fff;
+}
+h2{
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.back{
+  grid-area: main;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.darkBg{opacity: 0;}
+
+
+.section{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+main{
+  max-width: 1250px;
+  max-height: 860px;
+  height: 90vh;
+  width: 100%;
+  background: #ffffff48;
+  border-radius: 15px;
+  backdrop-filter: blur(100px);
+  overflow: hidden;
+}
+.top{
+  height: 58px;
+  width: 100%;
+  border-bottom: 1px solid #ffffff7c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.top .topLeft{
+  width: 60px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 30px;
+}
+.top .topLeft li{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.top .topLeft li:nth-child(1){background: #ffb5a4;}
+.top .topLeft li:nth-child(2){background: #ffd5a4;}
+.top .topLeft li:nth-child(3){background: #ffeada;}
+.top .search{
+  width: 300px;
+  height: 40px;
+  background: #ffffff7c;
+  border-radius: 5px;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  transition: 0.5s;
+  border: 2px solid #ff00;
+  z-index: 1;
+}
+.top .search:focus-within{
+  width: 400px;
+  border: 2px solid #86706696;
+}
+.top .search.dark:focus-within{border: 2px solid #ffffff7c;}
+.top .search>i{color: #86706696;}
+.top .search.dark>i{color: #ffffff7c;}
+.top .search input{
+  width: 90%;
+  height: 100%;
+  background: none;
+  border: none;
+  font-size: 14px;
+  margin-top: 2px;
+  color: #867066;
+  transition: 0.5s;
+  position: relative;
+  z-index: 999;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{
+  display:none;
+}
+.top .search input:focus{
+  width: 93%;
+}
+.top .search input::placeholder{
+  font-weight: 500;
+  color: #86706696;
+  transition: 0.5s;
+}
+.top .search.dark input::placeholder{
+  color: #ffffff7c;
+}
+.top input:focus::placeholder{
+  opacity: 0;
+}
+.searchView{
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  background: #ffffffad;
+  top: 130%;
+  left: 0;
+  border-radius: 5px;
+  padding: 20px;
+  overflow-y: auto;
+  transition: 0.3s;
+  display: none;
+}
+.searchView.dark{
+  background: #0000007c;
+}
+.searchList i{
+  color: #867066;
+  margin-right: 10px;
+  margin-bottom: 3px;
+}
+.searchList.dark i{
+  color: #fff;
+}
+.searchList li{
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+.searchList li:last-child{ margin-bottom: 0;}
+.top .search input:focus ~ .searchView{
+  display: block;
+}
+
+.top .topRight{
+  width: 130px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 23px;
+  margin-right: 30px;
+}
+.top .topRight li:nth-child(1){margin-top: 4.5px;}
+.top .topRight li:nth-child(2){margin-top: 6.5px;}
+.top .topRight li:nth-child(3){margin-top: 6px;}
+main .bottom{
+  width: 100%;
+  height: calc(100% - 58px);
+}
+main .bottom .bottomAll{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.left{
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 260px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+.leftPage{
+  width: inherit;
+  height: inherit;
+}
+.menuAll>span{
+  display: inline-block;
+  margin: 20px 0;
+  font-weight: 500;
+}
+.menuAll ul li{
+  width: auto;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+.menuAll ul li i{
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+  font-size: 20px;
+  margin-right: 10px;
+}
+.rightPage{
+  width: 100%;
+  height: 100%;
+  background: #ffffff7c;
+  border-radius: 0 0 15px 0;
+  padding: 20px;
+  overflow-y: auto;
+}
+.rightPageBottom{
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+
+/* login */
+#login{
+  width: 200px;
+  height: 200px;
+}
+#login h3{margin-bottom: 20px;}
+#login input{
+  display: block;
+  width: 100%;
+  height: 35px;
+  background: #ffffff7c;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  padding: 10px;
+  color: #867066;
+  border: 2px solid #ff00;
+  transition: 0.5s;
+}
+#login input:focus{border: 2px solid #86706696;}
+#login input::placeholder{
+  font-weight: 500;
+  color: #86706696;
+  transition: 0.5s;
+}
+#login .id.dark,
+#login .pw.dark{
+  background: #0000007c;
+  color:#fff;
+  border: 2px solid #ff00;
+}
+#login .id.dark::placeholder,
+#login .pw.dark::placeholder{
+  color: #ffffff7c;
+}
+#login .id.dark:focus,
+#login .pw.dark:focus{
+  border: 2px solid #ffffff7c;
+}
+#login input:focus::placeholder{opacity: 0;}
+#login button{
+  width: 100%;
+  height: 38px;
+  border: none;
+  border-radius: 50px;
+  background: #867066;
+  color: #fff;
+  font-size: 15px;
+  margin-top: 10px;
+  transition: 0.5s;
+}
+#login button.dark{
+  background: #fff;
+  color: #04182d;
+}
+#login button:hover{
+  transform: translateY(-7px);
+  box-shadow: 0 10px 20px #86706644;
+}
+#login button.dark:hover{
+  box-shadow: 0 10px 20px #ffffff44;
+}
+
+
+/* todolist */
+#todo{
+  width: 100%;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.todoText{
+  width: 100%;
+  height: 100%;
+  background: #ffb5a4;
+  border-radius: 15px;
+  padding: 20px;
+}
+.todoText h2{margin-bottom: 13px;}
+.todoText>div{
+  width: 100%;
+  height: 90%;
+}
+.todoTextInput{
+  width: 100%;
+  position: relative;
+}
+.todoText .todotxt{
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background: #ffffffb4;
+  font-size: 18px;
+  color: #867066;
+  padding: 10px;
+}
+#submit{
+  position: absolute;
+  right: 7px;
+  top: 8px;
+  background: none;
+  border: none;
+  font-size: 25px;
+  color: #867066;
+}
+.todoText .todotxt.dark{
+  background: #0000007c;
+  color: #fff;
+}
+.todoText .todotxt.dark::placeholder{color: #ffffff7c;}
+.todoText .todotxt::placeholder{
+  color: #86706696;
+  transition: 0.3s;
+}
+.todoText .todotxt:focus::placeholder{opacity: 0;}
+.todoText div ul{
+  width: 100%;
+  height: 80%;
+  margin: 10px 0;
+  overflow-y: auto;
+}
+.todoText div ul li{
+  display: flex;
+  align-items: center;
+}
+.todoText div ul li i{
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  width: 28px;
+  height: 30px;
+}
+.check{
+  width: 25px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+
+/* memo */
+#memo{
+  width: 40%;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+.memoText{
+  width: 100%;
+  height: 100%;
+  background: #ffd5a4;
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+}
+.memotxt{overflow: hidden;}
+.memoText textarea{
+  width: 100%;
+  height: 90%;
+  margin-top: 15px;
+  resize: none;
+  background: none;
+  font-size: 16px;
+  line-height: 23px;
+  color: #867066;
+  border: none;
+}
+.memoText textarea:focus{
+  outline: #fff;
+}
+.memoText .memoIn::placeholder{
+  color: #86706696;
+  transition: 0.3s;
+}
+.memoText .memoIn.dark::placeholder{
+  color: #ffffffab;
+}
+.memoText textarea:focus::placeholder{
+  opacity: 0;
+}
+.memoAdd{
+  /* width: 23%;
+  height: 350px; */
+  width: 100%;
+  height: 100%;
+  background: #ffd5a4;
+  border-radius: 15px;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.close{
+  background: none;
+  border: none;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #867066;
+  border: 1px solid #867066;
+  border-radius: 50px;
+  padding: 4px 12px;
+  transition: 0.3s;
+}
+.close:hover{
+  background: #867066;
+  color: #fff;
+}
+
+
+/* paint */
+#paint{
+  width: 40%;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+.paintText{
+  width: 100%;
+  height: 100%;
+  background: #ffeada;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+.paintText input{
+  background: none;
+  border: none;
+  font-size: 16px;
+  position: absolute;
+  top: 55px;
+  left: 20px;
+  transition: 0.3s;
+}
+.paintText .paintTxt::placeholder{
+  color: #86706696;
+}
+.paintText .paintTxt.dark::placeholder{
+  color: #ffffffab;
+}
+.pc{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.paintText h2{padding: 20px;}
+.clear{
+  background: none;
+  border: none;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #867066;
+  border: 1px solid #867066;
+  border-radius: 50px;
+  padding: 4px 12px;
+  transition: 0.3s;
+}
+.clear:hover{
+  background: #867066;
+  color: #fff;
+}
+.clear.dark{
+  color: #fff;
+  border: 1px solid #fff;
+}
+.clear.dark:hover{
+  background: #fff;
+  color: #04182d;
+}
+
+
+/* photo */
+#photo{
+  width: 40%;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+.photoText{
+  width: 100%;
+  height: 100%;
+  background: url(../img/peach2.jpg) no-repeat center center;
+  background-size: cover;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+
+.mode{
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+}
+.mode div{
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+  font-size: 25px;
+}
+.mode div i{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.mode .light{
+  display: none;
+  color: #867066;
+}
+.mode .dark{
+  background: #867066;
+  color: #fff;
+}
+.light, .dark{animation: 0.3s fadeIn;}
+
+
+
+.left::-webkit-scrollbar,
+.rightPage::-webkit-scrollbar,
+.todoText div ul::-webkit-scrollbar,
+.searchView::-webkit-scrollbar{width: 5px;}
+
+.left::-webkit-scrollbar-thumb,
+.rightPage::-webkit-scrollbar-thumb,
+.todoText div ul::-webkit-scrollbar-thumb,
+.searchView::-webkit-scrollbar-thumb{
+  background: #ffffffcb;
+  border-radius: 25px;
+}
+
+.left::-webkit-scrollbar-track,
+.rightPage::-webkit-scrollbar-track,
+.todoText div ul::-webkit-scrollbar-track,
+.searchView::-webkit-scrollbar-track{background-color: #ffffff00;}
+
+
+@keyframes fadeIn{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}

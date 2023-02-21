@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/mypage.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <title>Mypage</title>
+</head>
+<body>
+
+  <div id="mode">
+    <svg class="back" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="Gradient1" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+          <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite" />
+          <stop offset="0%" id="color1" stop-color="#ffeada" />
+          <stop offset="100%" id="color2" stop-color="#fdeac300" />
+        </radialGradient>
+        <radialGradient id="Gradient2" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+          <animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite" />
+          <stop offset="0%" id="color3" stop-color="#ffd5a4" />
+          <stop offset="100%" id="color4" stop-color="#f4cbba00" />
+        </radialGradient>
+        <radialGradient id="Gradient3" cx="50%" cy="50%" fx="50%" fy="50%" r=".5">
+          <animate attributeName="fx" dur="21.5s" values="0%;3%;0%" repeatCount="indefinite" />
+          <stop offset="0%" id="color5" stop-color="#ffb5a4" />
+          <stop offset="100%" id="color6" stop-color="#ffb5a400" />
+        </radialGradient>
+      </defs>
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient1)">
+        <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite" />
+        <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="17s" repeatCount="indefinite" />
+      </rect>
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient2)">
+        <animate attributeName="x" dur="23s" values="-25%;0%;-25%" repeatCount="indefinite" />
+        <animate attributeName="y" dur="24s" values="0%;50%;0%" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="18s" repeatCount="indefinite" />
+      </rect>
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient3)">
+        <animate attributeName="x" dur="25s" values="0%;25%;0%" repeatCount="indefinite" />
+        <animate attributeName="y" dur="26s" values="0%;25%;0%" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="19s" repeatCount="indefinite" />
+      </rect>
+    </svg>
+    
+    
+    <div class="section">
+      <main>
+  
+        <div class="top">
+          <ul class="topLeft">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <form class="search">
+            <i class="ri-search-line"></i>
+            <input type="search" placeholder="Search" id="search" onkeyup="filter()">
+            <div class="searchView">
+              <ul class="searchList">
+                <li class="searchText"><i class="ri-user-5-fill"></i><span class="st">join</span></li>
+                <li class="searchText"><i class="ri-user-fill"></i><span class="st">login</span></li>
+                <li class="searchText"><i class="ri-todo-fill"></i><span class="st">todolist</span></li>
+                <li class="searchText"><i class="ri-sticky-note-fill"></i><span class="st">memo</span></li>
+                <li class="searchText"><i class="ri-palette-fill"></i><span class="st">paint</span></li>
+                <li class="searchText"><i class="ri-image-fill"></i><span class="st">photo</span></li>
+                <li class="searchText"><i class="ri-contacts-book-fill"></i><span class="st">portfolio</span></li>
+                <li class="searchText"><i class="ri-instagram-fill"></i><span class="st">instagram</span></li>
+                <li class="searchText"><i class="ri-chat-3-fill"></i><span class="st">kakotalk</span></li>
+              </ul>
+            </div>
+          </form>
+          <ul class="topRight">
+            <li><i class="ri-notification-4-fill"></i></li>
+            <li><i class="ri-cloud-fill"></i></li>
+            <li><i class="ri-lock-2-fill"></i></li>
+          </ul>
+        </div>
+  
+        <div class="bottom">
+          <div class="bottomAll">
+            <div class="left">
+              <div class="leftPage">
+                <div id="login">
+                  <h3>로그인해주세요</h3>
+                  <input type="text" placeholder="ID" class="id">
+                  <input type="password" placeholder="Password" class="pw">
+                  <button>login</button>
+                </div>
+                <div class="menuAll">
+                  <span>Categories</span>
+                  <ul class="menu1">
+                    <li><i class="ri-user-5-fill"></i>join</li>
+                    <li><i class="ri-user-fill"></i>logout</li>
+                    <li><i class="ri-todo-fill"></i>todolist</li>
+                    <li><i class="ri-sticky-note-fill"></i>memo</li>
+                    <li><i class="ri-palette-fill"></i>paint</li>
+                    <li><i class="ri-image-fill"></i>photo</li>
+                  </ul>
+                  <span>Bookmark</span>
+                  <ul class="menu2">
+                    <li><i class="ri-contacts-book-fill"></i>portfolio</li>
+                    <li><i class="ri-instagram-fill"></i>instagram</li>
+                    <li><i class="ri-chat-3-fill"></i>kakotalk</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+      
+            <div class="rightPage">
+              <div id="todo">
+                <div class="todoText">
+                  <h2>todolist</h2>
+                  <div>
+                    <form class="todoTextInput">
+                      <input type="text" placeholder="할 일을 적어주세요" class="todotxt">
+                      <button id="submit"><i class="ri-add-line"></i></button>
+                    </form>
+                    <ul class="todoList"></ul>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="rightPageBottom">
+                <div id="memo">
+                  <div class="memoText">
+                    <h2>memo</h2>
+                    <form class="memotxt">
+                      <textarea class="memoIn" id="textarea" cols="30" rows="10" placeholder="메모를 적어주세요"></textarea>
+                    </form>
+                  </div>
+                </div>
+          
+                <div id="paint">
+                  <div class="paintText">
+                    <h2>paint</h2>
+                    <input class="paintTxt" type="text" placeholder="그림을 그려보세요">
+                    <canvas id="paintCanvas" class="pc"></canvas>
+                    <button class="clear">clear</button>
+                  </div>
+                </div> 
+          
+                <div id="photo">
+                  <div class="photoText">
+                    <h2>photo</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </main>
+  
+      <div class="mode">
+        <div class="dark"><i class="ri-moon-fill"></i></div>
+        <div class="light"><i class="ri-sun-fill"></i></div>
+      </div>
+  
+    </div>
+  </div>
+
+
+  <script src="js/mypage.js"></script>
+</body>
+</html>
